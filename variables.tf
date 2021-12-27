@@ -216,3 +216,11 @@ variable "nsg_config_enum" {
     CUSTOMIZE       = "Customize ports - Post deployment"
   }
 }
+
+variable "test1" {
+  default = ""
+}
+
+variable "test2" {
+  default = ""
+}
