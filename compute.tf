@@ -23,8 +23,9 @@ resource "oci_core_instance" "simple-vm" {
 
   source_details {
     source_type = "image"
-    source_id   = local.platform_image_id
+    source_id   = "ocid1.image.oc1.phx.aaaaaaaan6jxqwdry7xzrfwy63iuomqqdfdcf72ffqlu7qbkxp5ozvld2gba"
     #use a marketplace image or custom image:
+    #source_id   = local.compute_image_id
     #source_id   = local.compute_image_id
   }
   
