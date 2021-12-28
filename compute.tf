@@ -6,9 +6,9 @@ resource "oci_core_instance" "simple-vm" {
 
   dynamic "shape_config" {
     for_each = local.is_flex_shape
-      content {
-        ocpus = shape_config.value
-      }
+    content {
+      ocpus = shape_config.value
+    }
   }
 
 
@@ -23,7 +23,7 @@ resource "oci_core_instance" "simple-vm" {
 
   source_details {
     source_type = "image"
-    source_id   = "ocid1.image.oc1.phx.aaaaaaaan6jxqwdry7xzrfwy63iuomqqdfdcf72ffqlu7qbkxp5ozvld2gba"
+    source_id   = "ocid1.image.oc1.phx.aaaaaaaai677dtxiefmy2dkz536gru3ud44s77mthpevjiw5jjtaoyj5cema"
     #use a marketplace image or custom image:
     #source_id   = local.compute_image_id
   }
@@ -39,5 +39,5 @@ resource "oci_core_instance" "simple-vm" {
     user_data           = base64encode(file("./scripts/example.sh"))
   }
 
-  freeform_tags = {(var.tag_key_name) = (var.tag_value)}
+  freeform_tags = { (var.tag_key_name) = (var.tag_value) }
 }
