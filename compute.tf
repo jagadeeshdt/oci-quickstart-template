@@ -35,11 +35,6 @@ resource "oci_core_instance" "simple-vm" {
     ]
   }
 
-  lifecycle {
-    ignore_changes = [
-      source_details[0].source_id
-    ]
-  }
 
   metadata = {
     ssh_authorized_keys = var.ssh_public_key
